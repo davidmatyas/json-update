@@ -210,7 +210,7 @@ class JsonServiceImpl : JsonService {
         for ((key, valueUpdated) in updatedMap) {
             if (!original.containsKey(key)) {
                 val path = if (currentPath.isEmpty()) key else "$currentPath.$key"
-                changeLog.add("New;$path/$key -> value $valueUpdated")
+                changeLog.add("New;$path <null> -> value $valueUpdated")
                 if (includeNew == true) {
                     newMap.put(key, valueUpdated)
                 }
